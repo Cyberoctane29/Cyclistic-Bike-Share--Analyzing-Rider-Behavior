@@ -1,0 +1,214 @@
+---
+title: "Ride Data Analysis"
+author: "Saswat"
+date: "2024-09-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Load the CSV into R Use the following code to load and visualize the heatmap:
+```{r}
+install.packages("viridis")
+install.packages("reshape2")
+```
+
+```{r}
+# Load necessary libraries
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(viridis) 
+library(reshape2)
+```
+```{r}
+ride_data <- read.csv("C:/Users/saswa/Desktop/DA case study cyclistic project/average_ride_length_heatmap.csv")
+```
+```{r}
+View(ride_data)
+```
+
+```{r}
+# heatmap <- ggplot(ride_data, aes(x = day_name, y = member_casual, fill = avg_ride_length_minutes)) +
+#   geom_tile() +
+#   scale_fill_gradient(low = "#a0a0a0", high = "blue") +  # Off-white to blue gradient
+#   labs(x = "Day of the Week", y = "Member Type", fill = "Average Ride Length (minutes)") +
+#   theme_minimal()
+
+#putting lines
+
+heatmap4 <- ggplot(ride_data, aes(x = day_name, y = member_casual, fill = avg_ride_length_minutes)) +
+  geom_tile(color = "black") +  # Add black borders around tiles
+  scale_fill_gradient(low = "#a0a0a0", high = "blue") +  # Darker grey to blue gradient
+  labs(x = "Day of the Week", y = "Member Type", fill = "Average Ride Length (minutes)") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for better readability
+    axis.title.x = element_text(margin = margin(t = 10)),  # Increase space between x-axis title and labels
+    axis.title.y = element_text(margin = margin(r = 10))  # Increase space between y-axis title and labels
+  )
+#additionally for more accessibility, interpretability and color distinction.
+# heatmap1 <- ggplot(ride_data, aes(x = day_name, y = member_casual, fill = avg_ride_length_minutes)) +
+#   geom_tile() +
+#   scale_fill_gradient(low = "red", high = "green") +
+#   labs(x = "Day of the Week", y = "Member Type", fill = "Average Ride Length (minutes)") +
+#   theme_minimal()
+# 
+# 
+# heatmap2 <- ggplot(ride_data, aes(x = day_name, y = member_casual, fill = avg_ride_length_minutes)) +
+#   geom_tile() +
+#   scale_fill_viridis(option = "D", direction = 1) +  # Using viridis color scale
+#   labs(x = "Day of the Week", y = "Member Type", fill = "Average Ride Length (minutes)") +
+#   theme_minimal()
+# 
+# heatmap3 <- ggplot(ride_data, aes(x = day_name, y = member_casual, fill = avg_ride_length_minutes)) +
+#   geom_tile() +
+#   scale_fill_gradientn(colors = c("red", "yellow", "green", "blue")) + # Multi-color gradient
+#   labs(x = "Day of the Week", y = "Member Type", fill = "Average Ride Length (minutes)") +
+#   theme_minimal()
+
+
+```
+
+```{r}
+
+# print(heatmap)
+
+print(heatmap4)
+
+# print(heatmap1)
+# print(heatmap2)
+# print(heatmap3)
+
+```
+
+```{r}
+ggsave(filename = "heatmap.png", plot = heatmap4, width = 10, height = 6, units = "in", dpi = 300)
+
+```
+```{r}
+ride_data1 <- read.csv("C:/Users/saswa/Desktop/DA case study cyclistic project/percentile_membr_casual.csv")
+View(ride_data1)
+```
+```{r}
+ride_data1_long <- melt(ride_data1, id.vars = "member_casual", variable.name = "Percentile", value.name = "Ride_Length")
+View(ride_data1_long)
+
+```
+```{r}
+
+ggplot(ride_data1_long, aes(x = member_casual, y = Ride_Length, fill = Percentile)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    labs(title = "Percentile Distribution of Ride Lengths",
+         x = "Member Type",
+         y = "Ride Length (minutes)",
+         fill = "Percentile") +
+    theme_minimal()
+
+```
+```{r}
+ride_data2 <- read_csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/hour_of_day_member_casual_number_of_rides.csv")
+
+View(ride_data2)
+```
+```{r}
+ggplot(ride_data2, aes(x = hour_of_day, y = number_of_rides, color = member_casual)) +
+  geom_line() +
+  labs(title = "Ride Count by Hour of Day", x = "Hour of Day", y = "Number of Rides") +
+  theme_minimal()
+```
+```{r}
+ride_data3 <- read_csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/hour_of_day_day_of_week_member_casual_number_of_rides.csv")
+
+View(ride_data3)
+
+```
+```{r}
+ggplot(ride_data3, aes(x = hour_of_day, y = day_name, fill = number_of_rides)) +
+  geom_tile(color = "black") +  # Add black borders around tiles
+  scale_fill_gradient(low = "white", high = "blue") +  # White to blue gradient for fill
+  labs(title = "Heatmap of Ride Counts by Hour and Day of the Week", 
+       x = "Hour of Day", 
+       y = "Day of Week", 
+       fill = "Number of Rides") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for better readability
+    axis.title.x = element_text(margin = margin(t = 10)),  # Increase space between x-axis title and labels
+    axis.title.y = element_text(margin = margin(r = 10))  # Increase space between y-axis title and labels
+  )
+
+```
+```{r}
+top_start_stations <- read_csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/ssn_trip_count.csv")
+top_end_stations <- read_csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/esn_trip_count.csv")
+```
+```{r}
+View(top_start_stations)
+View(top_end_stations)
+```
+
+```{r}
+ggplot(top_start_stations, aes(x = reorder(start_station_name, -trip_count), y = trip_count)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top 10 Start Stations", x = "Start Station", y = "Number of Rides") +
+  theme_minimal()
+```
+```{r}
+ggplot(top_end_stations, aes(x = reorder(end_station_name, -trip_count), y = trip_count)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top 10 End Stations", x = "End Station", y = "Number of Rides") +
+  theme_minimal()
+```
+
+```{r}
+ride_data4 <- read.csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/ride_length_minutes_day_of_week_rideable_type.csv")
+View(ride_data4)
+head(ride_data4)
+```
+```{r}
+
+
+ride_data4 %>%
+  group_by(rideable_type) %>%
+  summarise(avg_ride_length = mean(ride_length_minutes, na.rm = TRUE)) %>%
+  ggplot(aes(x = rideable_type, y = avg_ride_length)) +
+  geom_bar(stat = "identity", width = 0.5) +  # Adjust the width here (default is 0.9)
+  labs(title = "Average Ride Length by Rideable Type", x = "Rideable Type", y = "Average Ride Length (minutes)")
+
+```
+```{r}
+ride_data5 <- read.csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/day_of_week_member_casual_ride_count.csv")
+View(ride_data5)
+```
+```{r}
+ggplot(ride_data5, aes(x = factor(day_of_week), y = ride_count, fill = member_casual)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Distribution of Rides by Day of the Week",
+       x = "Day of the Week",
+       y = "Number of Rides",
+       fill = "Member Type") +
+  theme_minimal()
+```
+```{r}
+ride_data6 <- read.csv("C:/Users/saswa/Desktop/DA case study cyclistic project/Visualisations/Visualisation data/hour_of_day_member_causal_ride_count.csv")
+View(ride_data6)
+```
+
+```{r}
+ggplot(ride_data6, aes(x = hour_of_day, y = member_casual, fill = ride_count)) +
+  geom_tile(color = "black") +  # Add black borders around tiles
+  scale_fill_gradient(low = "white", high = "blue") +
+  labs(title = "Ride Count by Hour of Day and Member Type",
+       x = "Hour of Day", y = "Member Type") +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_text(margin = margin(t = 10)),  # Increase space between x-axis title and labels
+    axis.title.y = element_text(margin = margin(r = 10))  # Increase space between y-axis title and labels
+  )
+
+```
+
