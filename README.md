@@ -28,9 +28,6 @@ At the end of the project, I provided actionable insights for stakeholders:
 - **Targeted Recommendations**: Based on stakeholder questions, I provided recommendations to help the company improve its operations.
 - **Next Steps**: I outlined actionable steps to implement the recommendations and maximize insights for business growth.
 
-## How to Explore
-Explore the Full Journey: Dive into the details and check out the full project on GitHub. [Link to Project Repository]
-
 ## Technologies Used
 - **SQL**: For data cleaning, processing, and analysis.
 - **Spreadsheets**: For additional data processing and manipulation.
