@@ -1,0 +1,5 @@
+# Ignore lintr config file
+.lintr
+
+# Ignore Data folder
+Data/
