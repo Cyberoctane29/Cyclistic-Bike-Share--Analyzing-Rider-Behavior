@@ -9,9 +9,9 @@ The project demonstrates an end-to-end analytics workflow spanning data cleaning
 ## Quick Access
 
 * 🚲 [Project Drive Folder](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
-* 📄 [Dashboard PDF](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
-* 🎥 [Dashboard Walkthrough Video](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
-* 📊 [Power BI Dashboard File (.pbix)](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
+* 📄 [Dashboard PDF](https://drive.google.com/file/d/1reQYsoGMn8wqWUztfbDWDk456t6wAptc/view)
+* 🎥 [Dashboard Walkthrough Video](https://drive.google.com/file/d/19R-Veq6DdjHAuoO5QpOSF8RubkYeHJa3/view)
+* 📊 [Power BI Dashboard File (.pbix)](https://drive.google.com/file/d/131Hw1qsuZug5YnsrwO5bsBZcw0BLm6CM/view)
 
 Note: The Power BI (.pbix) file is provided through the project drive folder due to GitHub file size limitations.
 
