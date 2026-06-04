@@ -4,7 +4,7 @@
 
 Welcome to my capstone project repository for the Google Data Analytics Professional Certificate! This project showcases my ability to apply data analytics techniques using SQL, spreadsheets, R programming, Python, and Power BI to derive insights from real-world data. The repository presents the complete analytical workflow, including data cleaning, validation, exploration, visualization, dashboard development, and actionable business recommendations.
 
-Originally created as a notebook on Kaggle and later adapted to GitHub, the project combines the original case study deliverables with an interactive Power BI dashboard, exploratory data validation notebook, dashboard walkthrough video, and supporting project assets.
+The project demonstrates an end-to-end analytics workflow spanning data cleaning, validation, exploratory analysis, visualization, dashboard development, and business-focused recommendations.
 
 ## Quick Access
 
@@ -27,38 +27,16 @@ The analysis involves:
 * **Data Validation & Exploration**: Using Python and Jupyter Notebook to assess schema consistency, validate data quality, and explore dataset characteristics.
 * **Interactive Dashboard Development**: Using Power BI to transform analytical findings into an interactive reporting solution with business-focused insights and recommendations.
 
-## What’s Included:
+## What’s Included
 
-* **R Markdown File**: This file outlines my analytical approach, integrating SQL query results and processed spreadsheet data, and includes R-coded visualizations.
-* **Data Files**: SQL query results and processed data from spreadsheets used for visualizations.
-* **Knitted HTML & PDF**: Two formats of the full final report, as originally formatted on Kaggle, with code, explanations, and visualizations.
-* **Power BI Dashboard File (.pbix)**: Interactive dashboard analyzing rider behavior and membership opportunities.
-* **Dashboard PDF Export**: Exported version of the complete dashboard.
-* **Dashboard Walkthrough Video**: Demonstration of dashboard functionality and navigation.
-* **Data Validation & Exploration Notebook**: Jupyter notebook documenting validation procedures and exploratory analysis.
-* **Dashboard Assets**: Supporting screenshots, PDFs, and project resources.
-
-## Project Deliverables
-
-* **R Markdown File**: Provides a detailed walkthrough of my analysis, integrating SQL results and spreadsheet data with R-coded visualizations.
-* **Data Files**: Contains the raw SQL query results and processed data files from spreadsheets.
-* **Final Reports (HTML & PDF)**: Reflects the full final analysis, as it was originally presented on Kaggle, with all code, visualizations, and explanations.
-* **Interactive Power BI Dashboard**: Multi-page dashboard exploring rider behavior, ride locations, and strategic recommendations.
-* **Dashboard PDF Export**: Shareable dashboard report for offline viewing.
-* **Dashboard Walkthrough Video**: Demonstrates dashboard interactivity and navigation.
-* **Data Validation Notebook**: Documents validation checks and exploratory analysis performed throughout the project.
-
-## Dashboard Deliverables
-
-This repository has been expanded beyond the original Google Data Analytics capstone project to include an interactive Power BI dashboard built using the Cyclistic 2024 ride-share dataset.
-
-Available dashboard resources include:
-
-- Interactive Power BI Dashboard (.pbix)
-- Dashboard PDF Export
-- Dashboard Walkthrough Video
-- Dashboard Screenshots
-- Data Validation & Exploration Notebook
+* **Jupyter Notebook (.ipynb)**: Complete Cyclistic case study documenting the full analytical workflow, including data preparation, SQL queries and results, R-based visualizations using ggplot2, exploratory analysis, key findings, and business recommendations.
+* **Data Files**: SQL query results and processed spreadsheet data used throughout the analysis and visualizations.
+* **Knitted HTML & PDF Reports**: Full case study reports containing code, explanations, findings, visualizations, and recommendations.
+* **Power BI Dashboard File (.pbix)**: Interactive multi-page dashboard analyzing rider behavior, ride locations, and membership growth opportunities.
+* **Dashboard PDF Export**: Shareable static version of the complete dashboard for offline viewing.
+* **Dashboard Walkthrough Video**: Demonstration of dashboard functionality, navigation, and interactivity.
+* **Data Validation & Exploration Notebook**: Jupyter notebook documenting data quality checks, schema validation, exploratory analysis, and validation procedures performed throughout dashboard development.
+* **Dashboard Assets**: Supporting screenshots, PDFs, and project resources used in dashboard documentation and presentation.
 
 ## Power BI Dashboard Overview
 
@@ -91,51 +69,26 @@ The report combines exploratory analysis, data validation, interactive visualiza
 
 <img width="3434" height="1976" alt="Cyclistic Strategic Recommendations Page-4" src="https://github.com/user-attachments/assets/62f0ce7b-d256-4433-adef-e7617d4c0af8" />
 
-## Data Validation & Exploration
-
-Before dashboard development, the dataset was validated through a series of exploratory and quality assessment procedures.
-
-Validation activities included:
-
-- Monthly schema consistency checks
-- Dataset consolidation validation
-- Datetime validation
-- Missing value assessment
-- Blank string validation
-- Missing station pattern analysis
-- Station usage distribution analysis
-- Unique station validation
-
-These checks ensured the reliability and consistency of the dataset prior to dashboard development.
 
 ## Key Findings & Recommendations
 
-At the end of the project, I provided actionable insights for stakeholders:
+The analysis revealed several meaningful differences between annual members and casual riders, providing opportunities for targeted membership growth strategies.
 
-* **Targeted Recommendations**: Based on stakeholder questions, I provided recommendations to help the company improve its operations.
-* **Next Steps**: I outlined actionable steps to implement the recommendations and maximize insights for business growth.
-* **Rider Behavior Insights**: Analysis revealed clear behavioral differences between annual members and casual riders across ride duration, seasonality, weekday usage, and station preferences.
-* **Membership Growth Opportunities**: The findings highlighted opportunities for targeted marketing, seasonal promotions, and location-based strategies aimed at converting casual riders into annual members.
+### Key Findings
 
-## Key Insights
+* Annual members demonstrate stronger weekday commuting behavior.
+* Casual riders show higher weekend activity and leisure-oriented usage patterns.
+* Casual riders generally take longer rides than annual members.
+* Seasonal trends have a greater impact on casual riders than members.
+* Station usage preferences vary between rider segments, indicating differences in travel purpose and location demand.
 
-Key observations identified during the analysis include:
+### Business Recommendations
 
-- Annual members demonstrate stronger weekday commuting behavior.
-- Casual riders show higher weekend activity.
-- Casual riders generally take longer rides than members.
-- Seasonal trends impact casual riders more significantly.
-- Station usage patterns vary between rider segments.
-
-## Business Recommendations
-
-Based on the analysis, the following recommendations were identified:
-
-1. Target casual riders during peak leisure periods.
-2. Promote membership benefits at frequently used casual rider stations.
-3. Introduce seasonal membership campaigns.
-4. Create incentives for repeat casual riders.
-5. Develop location-based marketing strategies.
+* Target casual riders during peak leisure and seasonal riding periods.
+* Promote membership benefits at frequently used casual rider stations.
+* Develop seasonal marketing campaigns focused on frequent casual riders.
+* Introduce incentives designed to encourage casual-to-member conversion.
+* Leverage location-based marketing strategies to improve membership adoption.
 
 ## Technologies Used
 
@@ -157,21 +110,11 @@ Based on the analysis, the following recommendations were identified:
 ├── Cyclistic_Bike_Share_Analyzing_Rider_Behavior.ipynb
 ├── Cyclistic Member vs Casual Rider Analysis Dashboard.pdf
 ├── Video - Cyclistic Member vs Casual Rider Analysis Dashboard.mp4
-├── README.md
-└── ride_data_analysis.Rmd
+└── README.md
 ```
-
-## Project Resources
-
-### Dashboard PDF
-Available in this repository.
-
-### Dashboard Walkthrough Video
-Available in this repository.
-
-### Power BI Dashboard File
-Available through the project drive folder due to file size limitations.
 
 ## Conclusion
 
-This project combines the original Google Data Analytics Cyclistic case study with an expanded Power BI dashboard solution. Through data validation, exploratory analysis, visualization, and business-focused reporting, the project highlights meaningful behavioral differences between annual members and casual riders and provides actionable recommendations to support membership growth.
+This project applies the Google Data Analytics Cyclistic case study framework to analyze rider behavior, identify meaningful differences between annual members and casual riders, and develop data-driven recommendations to support membership growth.
+
+Through data validation, exploratory analysis, visualization, interactive dashboard development, and business-focused reporting, the project demonstrates an end-to-end analytics workflow spanning data preparation, validation, exploration, visualization, dashboard development, and data storytelling.
