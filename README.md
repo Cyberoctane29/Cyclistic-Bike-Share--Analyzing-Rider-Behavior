@@ -130,6 +130,7 @@ Based on the analysis, the following recommendations were identified:
 
 ## Repository Structure
 
+```text
 ├── Analysis Reports
 ├── Data
 ├── Power BI Dashboard Assets
@@ -141,6 +142,7 @@ Based on the analysis, the following recommendations were identified:
 ├── Video - Cyclistic Member vs Casual Rider Analysis Dashboard.mp4
 ├── README.md
 └── ride_data_analysis.Rmd
+```
 
 ## Project Resources
 
