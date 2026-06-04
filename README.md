@@ -3,6 +3,14 @@
 ## Overview
 Welcome to my capstone project repository for the Google Data Analytics Professional Certificate! This project showcases my ability to apply data analytics techniques, using a combination of SQL, spreadsheets, and R programming, to derive insights from real-world data. The project was originally created as a notebook on Kaggle and then adapted to GitHub, where I present the analysis, visualizations, and actionable insights.
 
+## Quick Access
+
+- Dashboard PDF
+- Dashboard Walkthrough Video
+- Power BI Dashboard File
+- Analysis Notebook
+- Final Capstone Report
+
 ## Project Description
 This project analyzes bike-sharing data from Cyclistic, a fictional bike-share company, to understand rider behavior and identify trends. The key focus is on the use of SQL for data analysis, spreadsheets for data cleaning and transformation, and R for visualizing the results.
 
@@ -21,6 +29,49 @@ The analysis involves:
 - **R Markdown File**: Provides a detailed walkthrough of my analysis, integrating SQL results and spreadsheet data with R-coded visualizations.
 - **Data Files**: Contains the raw SQL query results and processed data files from spreadsheets.
 - **Final Reports (HTML & PDF)**: Reflects the full final analysis, as it was originally presented on Kaggle, with all code, visualizations, and explanations.
+
+## Dashboard Deliverables
+
+This repository has been expanded beyond the original Google Data Analytics capstone project to include an interactive Power BI dashboard built using the Cyclistic 2024 ride-share dataset.
+
+Available dashboard resources include:
+
+- Interactive Power BI Dashboard (.pbix)
+- Dashboard PDF Export
+- Dashboard Walkthrough Video
+- Dashboard Screenshots
+- Data Validation & Exploration Notebook
+
+## Power BI Dashboard Overview
+
+The Power BI dashboard was developed to explore behavioral differences between annual members and casual riders and support strategic membership growth recommendations.
+
+The dashboard includes:
+
+- Executive Overview
+- Rider Behavior Analysis
+- Ride Location Analysis
+- Strategic Recommendations
+
+The report combines exploratory analysis, data validation, interactive visualizations, and business-focused storytelling.
+
+## Dashboard Pages
+
+### Executive Overview
+
+![Executive Overview](path-to-image)
+
+### Rider Behavior Analysis
+
+![Rider Behavior Analysis](path-to-image)
+
+### Ride Location Analysis
+
+![Ride Location Analysis](path-to-image)
+
+### Strategic Recommendations
+
+![Strategic Recommendations](path-to-image)
 
 ## Key Findings & Recommendations
 At the end of the project, I provided actionable insights for stakeholders:
