@@ -132,7 +132,6 @@ Based on the analysis, the following recommendations were identified:
 
 ```text
 ├── Analysis Reports
-├── Data
 ├── Power BI Dashboard Assets
 │   ├── Images
 │   ├── PDFs
