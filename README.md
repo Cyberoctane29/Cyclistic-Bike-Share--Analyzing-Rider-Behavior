@@ -6,11 +6,12 @@ Welcome to my capstone project repository for the Google Data Analytics Professi
 
 ## Quick Access
 
-- Dashboard PDF
-- Dashboard Walkthrough Video
-- Power BI Dashboard File
-- Analysis Notebook
-- Final Capstone Report
+* 🚲 [Project Drive Folder](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
+* 📄 [Dashboard PDF](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
+* 🎥 [Dashboard Walkthrough Video](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
+* 📊 [Power BI Dashboard File (.pbix)](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
+
+Note: The Power BI (.pbix) file is provided through the project drive folder due to GitHub file size limitations.
 
 ## Project Description
 
@@ -63,19 +64,36 @@ The report combines exploratory analysis, data validation, interactive visualiza
 
 ### Executive Overview
 
-![Executive Overview](path-to-image)
+<img width="3434" height="1976" alt="Cyclistic Executive Overview Page-1" src="https://github.com/user-attachments/assets/083eb8b4-0665-4546-aa00-a6efbf3c4a02" />
 
 ### Rider Behavior Analysis
 
-![Rider Behavior Analysis](path-to-image)
+<img width="3434" height="1976" alt="Cyclistic Rider Behavior Analysis Page-2" src="https://github.com/user-attachments/assets/0fdd7062-34a3-495f-85c8-e865235c90d6" />
 
 ### Ride Location Analysis
 
-![Ride Location Analysis](path-to-image)
+<img width="3434" height="1976" alt="Cyclistic Ride Location Analysis Page-3" src="https://github.com/user-attachments/assets/258f289c-a864-4456-83c7-f4532e7b5df5" />
 
 ### Strategic Recommendations
 
-![Strategic Recommendations](path-to-image)
+<img width="3434" height="1976" alt="Cyclistic Strategic Recommendations Page-4" src="https://github.com/user-attachments/assets/62f0ce7b-d256-4433-adef-e7617d4c0af8" />
+
+## Data Validation & Exploration
+
+Before dashboard development, the dataset was validated through a series of exploratory and quality assessment procedures.
+
+Validation activities included:
+
+- Monthly schema consistency checks
+- Dataset consolidation validation
+- Datetime validation
+- Missing value assessment
+- Blank string validation
+- Missing station pattern analysis
+- Station usage distribution analysis
+- Unique station validation
+
+These checks ensured the reliability and consistency of the dataset prior to dashboard development.
 
 ## Key Findings & Recommendations
 
@@ -84,8 +102,57 @@ At the end of the project, I provided actionable insights for stakeholders:
 - **Targeted Recommendations**: Based on stakeholder questions, I provided recommendations to help the company improve its operations.
 - **Next Steps**: I outlined actionable steps to implement the recommendations and maximize insights for business growth.
 
+## Key Insights
+
+Key observations identified during the analysis include:
+
+- Annual members demonstrate stronger weekday commuting behavior.
+- Casual riders show higher weekend activity.
+- Casual riders generally take longer rides than members.
+- Seasonal trends impact casual riders more significantly.
+- Station usage patterns vary between rider segments.
+
+## Business Recommendations
+
+Based on the analysis, the following recommendations were identified:
+
+1. Target casual riders during peak leisure periods.
+2. Promote membership benefits at frequently used casual rider stations.
+3. Introduce seasonal membership campaigns.
+4. Create incentives for repeat casual riders.
+5. Develop location-based marketing strategies.
+
 ## Technologies Used
 
 - **SQL**: For data cleaning, processing, and analysis.
 - **Spreadsheets**: For additional data processing and manipulation.
 - **R Programming**: For creating visualizations to highlight trends and insights.
+
+## Repository Structure
+
+├── Analysis Reports
+├── Data
+├── Power BI Dashboard Assets
+│   ├── Images
+│   ├── PDFs
+│   └── Supporting Files
+├── Cyclistic_Bike_Share_Analyzing_Rider_Behavior.ipynb
+├── Cyclistic Member vs Casual Rider Analysis Dashboard.pdf
+├── Video - Cyclistic Member vs Casual Rider Analysis Dashboard.mp4
+├── README.md
+└── ride_data_analysis.Rmd
+
+## Project Resources
+
+### Dashboard PDF
+Available in this repository.
+
+### Dashboard Walkthrough Video
+Available in this repository.
+
+### Power BI Dashboard File
+Available through the project drive folder due to file size limitations.
+
+## Conclusion
+
+This project combines the original Google Data Analytics Cyclistic case study with an expanded Power BI dashboard solution. Through data validation, exploratory analysis, visualization, and business-focused reporting, the project highlights meaningful behavioral differences between annual members and casual riders and provides actionable recommendations to support membership growth.
