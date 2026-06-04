@@ -63,19 +63,19 @@ The report combines exploratory analysis, data validation, interactive visualiza
 
 ### Executive Overview
 
-![Executive Overview](C:\Users\saswa\Documents\GitHub\Cyclistic-Bike-Share--Analyzing-Rider-Behavior\Power BI Dashboard Assets\Images - Cyclistic Member vs Casual Rider Analysis Dashboard\Cyclistic Executive Overview Page-1.png)
+![Executive Overview](path-to-image)
 
 ### Rider Behavior Analysis
 
-![Rider Behavior Analysis](C:\Users\saswa\Documents\GitHub\Cyclistic-Bike-Share--Analyzing-Rider-Behavior\Power BI Dashboard Assets\Images - Cyclistic Member vs Casual Rider Analysis Dashboard\Cyclistic Rider Behavior Analysis Page-2.png)
+![Rider Behavior Analysis](path-to-image)
 
 ### Ride Location Analysis
 
-![Ride Location Analysis](C:\Users\saswa\Documents\GitHub\Cyclistic-Bike-Share--Analyzing-Rider-Behavior\Power BI Dashboard Assets\Images - Cyclistic Member vs Casual Rider Analysis Dashboard\Cyclistic Ride Location Analysis Page-3.png)
+![Ride Location Analysis](path-to-image)
 
 ### Strategic Recommendations
 
-![Strategic Recommendations](C:\Users\saswa\Documents\GitHub\Cyclistic-Bike-Share--Analyzing-Rider-Behavior\Power BI Dashboard Assets\Images - Cyclistic Member vs Casual Rider Analysis Dashboard\Cyclistic Strategic Recommendations Page-4.png)
+![Strategic Recommendations](path-to-image)
 
 ## Key Findings & Recommendations
 
