@@ -8,6 +8,7 @@ The project demonstrates an end-to-end analytics workflow spanning data cleaning
 
 ## Quick Access
 
+* 📓 [Complete Cyclistic Case Study Notebook (Kaggle)](https://www.kaggle.com/code/saswatsethda/cyclistic-bike-share-analyzing-rider-behavior)
 * 🚲 [Project Drive Folder](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
 * 📄 [Dashboard PDF](https://drive.google.com/file/d/1reQYsoGMn8wqWUztfbDWDk456t6wAptc/view)
 * 🎥 [Dashboard Walkthrough Video](https://drive.google.com/file/d/19R-Veq6DdjHAuoO5QpOSF8RubkYeHJa3/view)
