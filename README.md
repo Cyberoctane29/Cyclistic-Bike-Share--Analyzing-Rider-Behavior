@@ -2,23 +2,23 @@
 
 ## Overview
 
-Welcome to my capstone project repository for the Google Data Analytics Professional Certificate! This project showcases my ability to apply data analytics techniques using SQL, spreadsheets, R programming, Python, and Power BI to derive insights from real-world data. The repository presents the complete analytical workflow, including data cleaning, validation, exploration, visualization, dashboard development, and actionable business recommendations.
+Welcome to my capstone project repository for the Google Data Analytics Professional Certificate! This project showcases my ability to apply data analytics techniques using SQL, spreadsheets, R programming, Python, and Power BI to derive insights from real-world data. The repository presents the complete analytical workflow, including data cleaning, validation, exploration, visualization, report development, and actionable business recommendations.
 
-The project demonstrates an end-to-end analytics workflow spanning data cleaning, validation, exploratory analysis, visualization, dashboard development, and business-focused recommendations.
+The project demonstrates an end-to-end analytics workflow spanning data cleaning, validation, exploratory analysis, visualization, report development, and business-focused recommendations.
 
 ## Quick Access
 
 * 📓 [Complete Cyclistic Case Study Notebook (Kaggle)](https://www.kaggle.com/code/saswatsethda/cyclistic-bike-share-analyzing-rider-behavior)
 * 🚲 [Project Drive Folder](https://drive.google.com/drive/u/0/folders/1qs100ffvDdZLVN1kNTniJImNrZNPdg-J)
-* 📄 [Dashboard PDF](https://drive.google.com/file/d/1reQYsoGMn8wqWUztfbDWDk456t6wAptc/view)
-* 🎥 [Dashboard Walkthrough Video](https://drive.google.com/file/d/19R-Veq6DdjHAuoO5QpOSF8RubkYeHJa3/view)
-* 📊 [Power BI Dashboard File (.pbix)](https://drive.google.com/file/d/131Hw1qsuZug5YnsrwO5bsBZcw0BLm6CM/view)
+* 📄 [Report PDF](https://drive.google.com/file/d/1reQYsoGMn8wqWUztfbDWDk456t6wAptc/view)
+* 🎥 [Report Walkthrough Video](https://drive.google.com/file/d/19R-Veq6DdjHAuoO5QpOSF8RubkYeHJa3/view)
+* 📊 [Power BI Report File (.pbix)](https://drive.google.com/file/d/131Hw1qsuZug5YnsrwO5bsBZcw0BLm6CM/view)
 
 Note: The Power BI (.pbix) file is provided through the project drive folder due to GitHub file size limitations.
 
 ## Project Description
 
-This project analyzes bike-sharing data from Cyclistic, a fictional bike-share company, to understand rider behavior and identify trends. The project leverages SQL for data analysis, spreadsheets for data cleaning and transformation, R for visualization, Python for data validation and exploratory analysis, and Power BI for interactive dashboard development and business-focused reporting.
+This project analyzes bike-sharing data from Cyclistic, a fictional bike-share company, to understand rider behavior and identify trends. The project leverages SQL for data analysis, spreadsheets for data cleaning and transformation, R for visualization, Python for data validation and exploratory analysis, and Power BI for interactive report development and business-focused reporting.
 
 The analysis involves:
 
@@ -26,24 +26,24 @@ The analysis involves:
 * **Analysis**: SQL queries for exploring trends, patterns, and insights within the data.
 * **Visualizations**: Using R to generate meaningful visualizations to communicate the analysis results effectively.
 * **Data Validation & Exploration**: Using Python and Jupyter Notebook to assess schema consistency, validate data quality, and explore dataset characteristics.
-* **Interactive Dashboard Development**: Using Power BI to transform analytical findings into an interactive reporting solution with business-focused insights and recommendations.
+* **Interactive Report Development**: Using Power BI to transform analytical findings into an interactive reporting solution with business-focused insights and recommendations.
 
 ## What’s Included
 
 * **Jupyter Notebook (.ipynb)**: Complete Cyclistic case study documenting the full analytical workflow, including data preparation, SQL queries and results, R-based visualizations using ggplot2, exploratory analysis, key findings, and business recommendations.
 * **Data Files**: SQL query results and processed spreadsheet data used throughout the analysis and visualizations.
 * **Knitted HTML & PDF Reports**: Full case study reports containing code, explanations, findings, visualizations, and recommendations.
-* **Power BI Dashboard File (.pbix)**: Interactive multi-page dashboard analyzing rider behavior, ride locations, and membership growth opportunities.
-* **Dashboard PDF Export**: Shareable static version of the complete dashboard for offline viewing.
-* **Dashboard Walkthrough Video**: Demonstration of dashboard functionality, navigation, and interactivity.
-* **Data Validation & Exploration Notebook**: Jupyter notebook documenting data quality checks, schema validation, exploratory analysis, and validation procedures performed throughout dashboard development.
-* **Dashboard Assets**: Supporting screenshots, PDFs, and project resources used in dashboard documentation and presentation.
+* **Power BI  File (.pbix)**: Interactive multi-page report analyzing rider behavior, ride locations, and membership growth opportunities.
+* **Report PDF Export**: Shareable static version of the complete report for offline viewing.
+* **Report Walkthrough Video**: Demonstration of report functionality, navigation, and interactivity.
+* **Data Validation & Exploration Notebook**: Jupyter notebook documenting data quality checks, schema validation, exploratory analysis, and validation procedures performed throughout report development.
+* **Report Assets**: Supporting screenshots, PDFs, and project resources used in report documentation and presentation.
 
-## Power BI Dashboard Overview
+## Power BI Report Overview
 
-The Power BI dashboard was developed to explore behavioral differences between annual members and casual riders and support strategic membership growth recommendations.
+The Power BI report was developed to explore behavioral differences between annual members and casual riders and support strategic membership growth recommendations.
 
-The dashboard includes:
+The report includes:
 
 - Executive Overview
 - Rider Behavior Analysis
@@ -52,7 +52,7 @@ The dashboard includes:
 
 The report combines exploratory analysis, data validation, interactive visualizations, and business-focused storytelling.
 
-## Dashboard Pages
+## Report Pages
 
 ### Executive Overview
 
@@ -98,19 +98,19 @@ The analysis revealed several meaningful differences between annual members and 
 * **R Programming**: For creating visualizations to highlight trends and insights.
 * **Python (Pandas & NumPy)**: For exploratory analysis, validation, and data quality assessment.
 * **Jupyter Notebook**: For documenting validation workflows and exploratory investigations.
-* **Power BI**: For dashboard development, interactive reporting, and business-focused data storytelling.
+* **Power BI**: For report development, interactive reporting, and business-focused data storytelling.
 
 ## Repository Structure
 
 ```text
 ├── Analysis Reports
-├── Power BI Dashboard Assets
+├── Power BI Report Assets
 │   ├── Images
 │   ├── PDFs
 │   └── Supporting Files
 ├── Cyclistic_Bike_Share_Analyzing_Rider_Behavior.ipynb
-├── Cyclistic Member vs Casual Rider Analysis Dashboard.pdf
-├── Video - Cyclistic Member vs Casual Rider Analysis Dashboard.mp4
+├── Cyclistic Member vs Casual Rider Analysis .pdf
+├── Video - Power BI Report - Cyclistic Member vs Casual Rider Analysis Report - Full User Interaction Demo.mp4
 └── README.md
 ```
 
@@ -118,4 +118,4 @@ The analysis revealed several meaningful differences between annual members and 
 
 This project applies the Google Data Analytics Cyclistic case study framework to analyze rider behavior, identify meaningful differences between annual members and casual riders, and develop data-driven recommendations to support membership growth.
 
-Through data validation, exploratory analysis, visualization, interactive dashboard development, and business-focused reporting, the project demonstrates an end-to-end analytics workflow spanning data preparation, validation, exploration, visualization, dashboard development, and data storytelling.
+Through data validation, exploratory analysis, visualization, interactive report development, and business-focused reporting, the project demonstrates an end-to-end analytics workflow spanning data preparation, validation, exploration, visualization, report development, and data storytelling.
