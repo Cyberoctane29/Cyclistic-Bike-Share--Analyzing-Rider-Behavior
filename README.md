@@ -109,7 +109,7 @@ The analysis revealed several meaningful differences between annual members and 
 │   ├── PDFs
 │   └── Supporting Files
 ├── Cyclistic_Bike_Share_Analyzing_Rider_Behavior.ipynb
-├── Cyclistic Member vs Casual Rider Analysis .pdf
+├── Power BI Report PDF - Cyclistic Member vs Casual Rider Analysis Report.pdf
 ├── Video - Power BI Report - Cyclistic Member vs Casual Rider Analysis Report - Full User Interaction Demo.mp4
 └── README.md
 ```
