@@ -1,4 +1,4 @@
-# Cyclistic Bike Share: Analyzing Rider Behavior - Capstone Project
+# **Cyclistic Bike Share: Analyzing Rider Behavior - End-to-End Analysis**
 
 ## Overview
 
