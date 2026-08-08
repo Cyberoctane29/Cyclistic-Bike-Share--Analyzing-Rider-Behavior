@@ -41,7 +41,9 @@ USE cyclistic_tripdata;
 -- Review the total number of records available for analysis.
 
 SELECT
+
     COUNT(*) AS total_records
+    
 FROM cyclistic_tripdata_2024_processed;
 
 -------------------------------------------------------------
@@ -59,7 +61,9 @@ DESCRIBE cyclistic_tripdata_2024_processed;
 -- Inspect a sample of processed ride records.
 
 SELECT *
+
 FROM cyclistic_tripdata_2024_processed
+
 LIMIT 10;
 
 -------------------------------------------------------------
@@ -110,9 +114,13 @@ FROM cyclistic_tripdata_2024_processed;
 -- Summarize the total number of rides for each rider type.
 
 SELECT
+
     member_casual,
+    
     COUNT(*) AS total_rides
+    
 FROM cyclistic_tripdata_2024_processed
+
 GROUP BY member_casual;
 
 -------------------------------------------------------------
@@ -123,8 +131,11 @@ GROUP BY member_casual;
 -- each rider type.
 
 SELECT
+
     member_casual,
+    
     COUNT(*) AS total_rides,
+    
     ROUND(
         100.0 * COUNT(*) / (
             SELECT COUNT(*)
@@ -132,7 +143,9 @@ SELECT
         ),
         2
     ) AS ride_percentage
+    
 FROM cyclistic_tripdata_2024_processed
+
 GROUP BY member_casual;
 
 -------------------------------------------------------------
@@ -143,12 +156,16 @@ GROUP BY member_casual;
 -- members and casual riders.
 
 SELECT
+
     member_casual,
+    
     ROUND(
         AVG(ride_length_minutes),
         2
     ) AS average_ride_duration
+    
 FROM cyclistic_tripdata_2024_processed
+
 GROUP BY member_casual;
 
 -------------------------------------------------------------
@@ -194,17 +211,18 @@ SELECT
 
 FROM cyclistic_tripdata_2024_processed
 
-GROUP BY duration_bucket
+GROUP BY 
+   duration_bucket
 
-ORDER BY
-    MIN(ride_length_minutes);
+ORDER BY 
+   MIN(ride_length_minutes);
 
 -------------------------------------------------------------
 -- Ride Duration Distribution by Rider Type
 -------------------------------------------------------------
 
--- Compare ride duration distributions between annual
--- members and casual riders.
+-- Summarize ride duration distributions within annual
+-- member and casual rider groups.
 
 SELECT
 
@@ -285,8 +303,8 @@ ORDER BY
 -- Monthly Rider Type Distribution
 -------------------------------------------------------------
 
--- Summarize monthly ride counts and the proportion of rides
--- contributed by annual members and casual riders.
+-- Summarize monthly ride counts and the distribution of
+-- rides across months within each rider type.
 
 SELECT
 
@@ -301,7 +319,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY MONTH(started_at)
+            PARTITION BY member_casual
         ),
         2
     ) AS monthly_ride_percentage
@@ -317,10 +335,10 @@ GROUP BY
     member_casual
 
 ORDER BY
-
-    month_number,
-
-    member_casual;
+    
+    member_casual,
+    
+    month_number;
     
 -------------------------------------------------------------
 -- Seasonal Analysis View
@@ -378,8 +396,8 @@ ORDER BY
 -- Seasonal Rider Type Distribution
 -------------------------------------------------------------
 
--- Summarize seasonal ride counts and the proportion of rides
--- contributed by annual members and casual riders.
+-- Summarize seasonal ride counts and the distribution of
+-- rides across seasons within each rider type.
 
 SELECT
 
@@ -392,7 +410,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY season
+            PARTITION BY member_casual
         ),
         2
     ) AS seasonal_ride_percentage
@@ -406,16 +424,14 @@ GROUP BY
     member_casual
 
 ORDER BY
-
+    member_casual,
     FIELD(
         season,
         'Winter',
         'Spring',
         'Summer',
         'Autumn'
-    ),
-
-    member_casual;
+    );
     
 -------------------------------------------------------------
 -- Seasonal Ride Duration
@@ -496,8 +512,8 @@ ORDER BY
 -- Day-of-Week Rider Distribution
 -------------------------------------------------------------
 
--- Summarize daily ride counts and the proportion of rides
--- contributed by annual members and casual riders.
+-- Summarize daily ride counts and the distribution of rides
+-- across the days of the week within each rider type.
 
 SELECT
 
@@ -512,7 +528,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY DAYOFWEEK(started_at)
+            PARTITION BY member_casual
         ),
         2
     ) AS daily_ride_percentage
@@ -529,6 +545,8 @@ GROUP BY
 
 ORDER BY
 
+	member_casual,
+    
     day_number;
     
 -------------------------------------------------------------
@@ -569,8 +587,9 @@ ORDER BY
 -- Weekday vs. Weekend Rider Behavior Comparison
 -------------------------------------------------------------
 
--- Compare ride volume, rider composition, and average ride
--- duration between weekdays and weekends.
+-- Compare ride volume, average ride duration, and the
+-- distribution of rides between weekdays and weekends
+-- within each rider type.
 
 SELECT
 
@@ -596,11 +615,7 @@ SELECT
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
             PARTITION BY
-                CASE
-                    WHEN DAYOFWEEK(started_at) IN (1,7)
-                        THEN 'Weekend'
-                    ELSE 'Weekday'
-                END
+                member_casual
         ),
         2
     ) AS ride_percentage
@@ -659,8 +674,8 @@ ORDER BY
 -- Hour-of-Day Rider Distribution
 -------------------------------------------------------------
 
--- Summarize hourly ride counts and the proportion of rides
--- contributed by annual members and casual riders.
+-- Summarize hourly ride counts and the distribution of
+-- rides across hours of the day within each rider type.
 
 SELECT
 
@@ -673,7 +688,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY hour_of_day
+            PARTITION BY member_casual
         ),
         2
     ) AS hourly_ride_percentage
@@ -688,9 +703,9 @@ GROUP BY
 
 ORDER BY
 
-    hour_of_day,
-
-    member_casual;
+	member_casual,
+    
+    hour_of_day;
     
 -------------------------------------------------------------
 -- Hour-of-Day Ride Duration
@@ -770,9 +785,8 @@ ORDER BY
 -- Day-Hour Rider Distribution
 -------------------------------------------------------------
 
--- Summarize ride counts and the proportion of rides
--- contributed by annual members and casual riders for
--- each day-hour combination.
+-- Summarize ride counts and the distribution of rides
+-- across day-hour combinations within each rider type.
 
 SELECT
 
@@ -788,9 +802,7 @@ SELECT
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
             PARTITION BY
-                WEEKDAY(ride_date),
-                DAYNAME(ride_date),
-                hour_of_day
+               member_casual
         ),
         2
     ) AS ride_percentage
@@ -809,11 +821,12 @@ GROUP BY
 
 ORDER BY
 
+	member_casual,
+    
     WEEKDAY(ride_date),
 
-    hour_of_day,
-
-    member_casual;
+    hour_of_day
+    ;
     
 -------------------------------------------------------------
 -- Day-Hour Ride Duration
@@ -890,9 +903,8 @@ ORDER BY
 -- Bike Type Rider Distribution
 -------------------------------------------------------------
 
--- Summarize ride counts and the proportion of rides
--- contributed by annual members and casual riders for
--- each bike type.
+-- Summarize ride counts and the distribution of rides
+-- across bike types within each rider type.
 
 SELECT
 
@@ -905,7 +917,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY rideable_type
+            PARTITION BY member_casual
         ),
         2
     ) AS ride_percentage
@@ -1025,9 +1037,9 @@ LIMIT 20;
 -- Start Station Rider Distribution
 -------------------------------------------------------------
 
--- Summarize ride counts and the proportion of rides
--- contributed by annual members and casual riders for
--- the 20 most frequently used start stations.
+-- Summarize ride counts and the distribution of rides
+-- across the 20 most frequently used start stations
+-- within each rider type.
 
 WITH top_start_stations AS (
 
@@ -1064,7 +1076,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY t.start_station_name
+            PARTITION BY p.member_casual
         ),
         2
     ) AS ride_percentage
@@ -1083,17 +1095,17 @@ GROUP BY
 
 ORDER BY
 
-    MAX(t.total_station_rides) DESC,
-
-    p.member_casual;
+    p.member_casual,
+    
+    MAX(t.total_station_rides) DESC;
     
 -------------------------------------------------------------
 -- End Station Rider Distribution
 -------------------------------------------------------------
 
--- Summarize ride counts and the proportion of rides
--- contributed by annual members and casual riders for
--- the 20 most frequently used end stations.
+-- Summarize ride counts and the distribution of rides
+-- across the 20 most frequently used end stations
+-- within each rider type.
 
 WITH top_end_stations AS (
 
@@ -1130,7 +1142,7 @@ SELECT
     ROUND(
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
-            PARTITION BY t.end_station_name
+            PARTITION BY p.member_casual
         ),
         2
     ) AS ride_percentage
@@ -1149,10 +1161,10 @@ GROUP BY
 
 ORDER BY
 
-    MAX(t.total_station_rides) DESC,
-
-    p.member_casual;
+	p.member_casual,
     
+    MAX(t.total_station_rides) DESC;
+
 -------------------------------------------------------------
 -- Most Popular Routes
 -------------------------------------------------------------
@@ -1196,9 +1208,9 @@ LIMIT 20;
 -- Route Rider Distribution
 -------------------------------------------------------------
 
--- Summarize ride counts and the proportion of rides
--- contributed by annual members and casual riders for
--- the 20 most frequently traveled routes.
+-- Summarize ride counts and the distribution of rides
+-- across the 20 most frequently traveled routes within
+-- each rider type.
 
 WITH top_routes AS (
 
@@ -1246,8 +1258,7 @@ SELECT
         100.0 * COUNT(*) /
         SUM(COUNT(*)) OVER (
             PARTITION BY
-                t.start_station_name,
-                t.end_station_name
+                p.member_casual
         ),
         2
     ) AS ride_percentage
@@ -1269,11 +1280,19 @@ GROUP BY
     p.member_casual
 
 ORDER BY
-
+    
+	p.member_casual,
+     
     MAX(t.total_route_rides) DESC,
 
     t.start_station_name,
 
-    t.end_station_name,
+    t.end_station_name;
 
-    p.member_casual;
+-------------------------------------------------------------
+-- Analyze Stage Complete
+-------------------------------------------------------------
+
+-- The completed exploratory analysis is ready for downstream
+-- reporting and business recommendation development in the
+-- Share and Act stages.

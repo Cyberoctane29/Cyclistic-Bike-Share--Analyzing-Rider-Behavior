@@ -251,7 +251,7 @@ IGNORE 1 ROWS;
 CREATE INDEX idx_ride_id
 ON cyclistic_tripdata_2024_raw (ride_id);
 
--- Verify that the ride_id index was created successfully.
+-- Verify that the ride_id index was created successfully
 
 SHOW INDEXES
 FROM cyclistic_tripdata_2024_raw;
@@ -287,7 +287,6 @@ SELECT
     COUNT(*) AS blank_ride_ids
 FROM cyclistic_tripdata_2024_raw
 WHERE TRIM(ride_id) = '';
-
 
 -- Count the number of duplicate ride IDs
 
@@ -334,7 +333,7 @@ WHERE ride_id = '0354FD0756337B59';
 -- Missing Values
 -------------------------------------------------------------
 
--- Count blank station names and station IDs.
+-- Count blank station names and station IDs
 
 SELECT
     SUM(TRIM(start_station_name) = '') AS blank_start_station_names,
@@ -343,7 +342,7 @@ SELECT
     SUM(TRIM(end_station_id) = '') AS blank_end_station_ids
 FROM cyclistic_tripdata_2024_raw;
 
--- Count records with zero-valued coordinates.
+-- Count records with zero-valued coordinates
 
 SELECT
     SUM(start_lat = 0) AS zero_start_lat,
@@ -356,7 +355,7 @@ FROM cyclistic_tripdata_2024_raw;
 -- Categorical Consistency
 -------------------------------------------------------------
 
--- Inspect rideable_type values.
+-- Inspect rideable_type values
 
 SELECT
     rideable_type,
@@ -365,7 +364,7 @@ FROM cyclistic_tripdata_2024_raw
 GROUP BY rideable_type
 ORDER BY record_count DESC;
 
--- Inspect member_casual values.
+-- Inspect member_casual values
 
 SELECT
     member_casual,
@@ -378,28 +377,28 @@ ORDER BY record_count DESC;
 -- Temporal Consistency
 -------------------------------------------------------------
 
--- Identify records with missing timestamps.
+-- Identify records with missing timestamps
 
 SELECT
     SUM(started_at IS NULL) AS null_started_at,
     SUM(ended_at IS NULL) AS null_ended_at
 FROM cyclistic_tripdata_2024_raw;
 
--- Identify trips that end before they start.
+-- Identify trips that end before they start
 
 SELECT
     COUNT(*) AS trips_ending_before_start
 FROM cyclistic_tripdata_2024_raw
 WHERE ended_at < started_at;
 
--- Inspect records with invalid timestamp order.
+-- Inspect records with invalid timestamp order
 
 SELECT *
 FROM cyclistic_tripdata_2024_raw
 WHERE ended_at < started_at
 LIMIT 10;
 
--- Summarize the range of negative ride durations.
+-- Summarize the range of negative ride durations
 
 SELECT
     MIN(TIMESTAMPDIFF(SECOND, started_at, ended_at)) AS minimum_duration_seconds,
@@ -411,21 +410,14 @@ WHERE ended_at < started_at;
 -- Ride Duration
 -------------------------------------------------------------
 
--- Count trips with negative ride durations.
-
-SELECT
-    COUNT(*) AS negative_duration_trips
-FROM cyclistic_tripdata_2024_raw
-WHERE TIMESTAMPDIFF(SECOND, started_at, ended_at) < 0;
-
--- Count trips with zero ride duration.
+-- Count trips with zero ride duration
 
 SELECT
     COUNT(*) AS zero_duration_trips
 FROM cyclistic_tripdata_2024_raw
 WHERE TIMESTAMPDIFF(SECOND, started_at, ended_at) = 0;
 
--- Count trips longer than 24 hours.
+-- Count trips longer than 24 hours
 
 SELECT
     COUNT(*) AS rides_over_24_hours
@@ -436,7 +428,7 @@ WHERE TIMESTAMPDIFF(
     ended_at
 ) > 86400;
 
--- Inspect unusually long rides.
+-- Inspect unusually long rides
 
 SELECT *
 FROM cyclistic_tripdata_2024_raw
@@ -451,14 +443,14 @@ LIMIT 10;
 -- Geographic Values
 -------------------------------------------------------------
 
--- Identify records with invalid latitude values.
+-- Identify records with invalid latitude values
 
 SELECT
     SUM(start_lat NOT BETWEEN -90 AND 90) AS invalid_start_lat,
     SUM(end_lat NOT BETWEEN -90 AND 90) AS invalid_end_lat
 FROM cyclistic_tripdata_2024_raw;
 
--- Identify records with invalid longitude values.
+-- Identify records with invalid longitude values
 
 SELECT
     SUM(start_lng NOT BETWEEN -180 AND 180) AS invalid_start_lng,
@@ -466,7 +458,7 @@ SELECT
 FROM cyclistic_tripdata_2024_raw;
 
 -- Assess overlap between zero-valued destination coordinates
--- and rides exceeding 24 hours.
+-- and rides exceeding 24 hours
 
 SELECT
     COUNT(*) AS zero_coordinate_records,
@@ -533,7 +525,7 @@ CREATE TABLE cyclistic_tripdata_2024_processed (
 -------------------------------------------------------------
 
 -- Apply all data cleaning rules while loading records from
--- the raw staging table into the processed table.
+-- the raw staging table into the processed table
 
 INSERT INTO cyclistic_tripdata_2024_processed (
 
@@ -559,7 +551,7 @@ WITH
 -- Duplicate Records
 -- -------------------------------------------------------------
 
--- Retain one record for each ride_id.
+-- Retain one record for each ride_id
 
 deduplicated_rides AS (
 
@@ -580,7 +572,7 @@ deduplicated_rides AS (
 -- -------------------------------------------------------------
 
 -- Standardize blank station fields and zero-valued
--- destination coordinates.
+-- destination coordinates
 
 cleaned_rides AS (
 
@@ -663,7 +655,7 @@ WHERE rn = 1
 -- Dataset Reconciliation
 -------------------------------------------------------------
 
--- Compare raw and processed row counts.
+-- Compare raw and processed row counts
 
 SELECT
 
@@ -673,7 +665,7 @@ SELECT
     (SELECT COUNT(*)
      FROM cyclistic_tripdata_2024_processed) AS processed_record_count;
 
--- Calculate the total number of records excluded during data cleaning.
+-- Calculate the total number of records excluded during data cleaning
 
 SELECT
 
@@ -689,7 +681,7 @@ SELECT
 -- Uniqueness
 -------------------------------------------------------------
 
--- Verify that no duplicate ride_id values remain.
+-- Verify that no duplicate ride_id values remain
 
 SELECT
     ride_id,
@@ -698,7 +690,7 @@ FROM cyclistic_tripdata_2024_processed
 GROUP BY ride_id
 HAVING COUNT(*) > 1;
 
--- Enforce ride_id uniqueness with a primary key constraint.
+-- Enforce ride_id uniqueness with a primary key constraint
 
 ALTER TABLE cyclistic_tripdata_2024_processed
 ADD PRIMARY KEY (ride_id);
@@ -707,7 +699,7 @@ ADD PRIMARY KEY (ride_id);
 -- Missing Value Standardization
 -------------------------------------------------------------
 
--- Verify that no blank station names and station IDs remain.
+-- Verify that no blank station names and station IDs remain
 
 SELECT
     SUM(TRIM(start_station_name) = '') AS blank_start_station_names,
@@ -716,7 +708,7 @@ SELECT
     SUM(TRIM(end_station_id) = '') AS blank_end_station_ids
 FROM cyclistic_tripdata_2024_processed;
 
--- Count station names and station IDs standardized as NULL.
+-- Count station names and station IDs standardized as NULL
 
 SELECT
     SUM(start_station_name IS NULL) AS null_start_station_names,
@@ -729,14 +721,14 @@ FROM cyclistic_tripdata_2024_processed;
 -- Spatial Standardization
 -------------------------------------------------------------
 
--- Verify that no zero-valued destination coordinates remain.
+-- Verify that no zero-valued destination coordinates remain
 
 SELECT
     SUM(end_lat = 0) AS zero_end_lat,
     SUM(end_lng = 0) AS zero_end_lng
 FROM cyclistic_tripdata_2024_processed;
 
--- Count destination coordinates standardized as NULL.
+-- Count destination coordinates standardized as NULL
 
 SELECT
     SUM(end_lat IS NULL) AS null_end_lat,
@@ -747,14 +739,14 @@ FROM cyclistic_tripdata_2024_processed;
 -- Temporal Integrity
 -------------------------------------------------------------
 
--- Verify that no negative or zero-duration rides remain.
+-- Verify that no negative or zero-duration rides remain
 
 SELECT
     SUM(ended_at < started_at) AS negative_duration_rides,
     SUM(ended_at = started_at) AS zero_duration_rides
 FROM cyclistic_tripdata_2024_processed;
 
--- Verify that no rides exceeding 24 hours remain.
+-- Verify that no rides exceeding 24 hours remain
 
 SELECT
     COUNT(*) AS rides_over_24_hours
@@ -782,16 +774,16 @@ WHERE TIMESTAMPDIFF(
 -- Ride Duration
 -------------------------------------------------------------
 
--- Add the ride_length_minutes column to the processed table.
+-- Add the ride_length_minutes column to the processed table
 
 ALTER TABLE cyclistic_tripdata_2024_processed
 ADD COLUMN ride_length_minutes DECIMAL(10, 2);
 
--- Temporarily disable safe update mode for the full-table update.
+-- Temporarily disable safe update mode for the full-table update
 
 SET SQL_SAFE_UPDATES = 0;
 
--- Calculate ride_length_minutes from the exact duration between started_at and ended_at.
+-- Calculate ride_length_minutes from the exact duration between started_at and ended_at
 
 UPDATE cyclistic_tripdata_2024_processed
 SET ride_length_minutes =
@@ -808,12 +800,12 @@ SET ride_length_minutes =
 -- Ride Date
 -------------------------------------------------------------
 
--- Add a column to store the calendar date on which each ride started.
+-- Add a column to store the calendar date on which each ride started
 
 ALTER TABLE cyclistic_tripdata_2024_processed
 ADD COLUMN ride_date DATE;
 
--- Derive ride_date from the date component of started_at.
+-- Derive ride_date from the date component of started_at
 
 UPDATE cyclistic_tripdata_2024_processed
 SET ride_date = DATE(started_at);
@@ -822,17 +814,17 @@ SET ride_date = DATE(started_at);
 -- Ride Start Hour
 -------------------------------------------------------------
 
--- Add a column to store the hour of the day at which each ride started.
+-- Add a column to store the hour of the day at which each ride started
 
 ALTER TABLE cyclistic_tripdata_2024_processed
 ADD COLUMN hour_of_day TINYINT;
 
--- Derive hour_of_day from the hour component of started_at.
+-- Derive hour_of_day from the hour component of started_at
 
 UPDATE cyclistic_tripdata_2024_processed
 SET hour_of_day = HOUR(started_at);
 
--- Re-enable safe update mode after the full-table update.
+-- Re-enable safe update mode after the full-table update
 
 SET SQL_SAFE_UPDATES = 1;
 
@@ -847,7 +839,7 @@ SET SQL_SAFE_UPDATES = 1;
 -------------------------------------------------------------
 
 -------------------------------------------------------------
--- Part B: Feature Verification
+-- Part B: Post-Feature Engineering Verification
 -------------------------------------------------------------
 
 -------------------------------------------------------------
@@ -855,7 +847,7 @@ SET SQL_SAFE_UPDATES = 1;
 -------------------------------------------------------------
 
 -- Verify that ride_length_minutes was populated for all
--- records.
+-- records
 
 SELECT
     COUNT(*) AS total_records,
@@ -863,7 +855,7 @@ SELECT
 FROM cyclistic_tripdata_2024_processed;
 
 -- Verify that ride_length_minutes remains within the
--- validated temporal boundaries.
+-- validated temporal boundaries
 
 SELECT
     MIN(ride_length_minutes) AS minimum_ride_length,
@@ -874,7 +866,7 @@ FROM cyclistic_tripdata_2024_processed;
 -- Ride Date
 -------------------------------------------------------------
 
--- Verify that ride_date was populated for all records.
+-- Verify that ride_date was populated for all records
 
 SELECT
     COUNT(*) AS total_records,
@@ -882,7 +874,7 @@ SELECT
 FROM cyclistic_tripdata_2024_processed;
 
 -- Verify that ride_date matches the date component of
--- started_at.
+-- started_at
 
 SELECT
     COUNT(*) AS mismatched_ride_dates
@@ -893,7 +885,7 @@ WHERE ride_date <> DATE(started_at);
 -- Ride Start Hour
 -------------------------------------------------------------
 
--- Verify that hour_of_day was populated for all records.
+-- Verify that hour_of_day was populated for all records
 
 SELECT
     COUNT(*) AS total_records,
@@ -901,7 +893,7 @@ SELECT
 FROM cyclistic_tripdata_2024_processed;
 
 -- Verify that hour_of_day matches the hour component of
--- started_at.
+-- started_at
 
 SELECT
     COUNT(*) AS mismatched_hour_values
