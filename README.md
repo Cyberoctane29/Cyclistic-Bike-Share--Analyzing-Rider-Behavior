@@ -4,7 +4,7 @@
 
 Welcome to my project repository. This project presents an end-to-end analysis of **Cyclistic's 2024 bike-share trip data**, focused on understanding how annual members and casual riders use the service differently and identifying opportunities to increase annual memberships.
 
-The project follows the **APPASA framework — Ask, Prepare, Process, Analyze, Share, and Act** — and combines SQL, MySQL, DuckDB, Python/Jupyter, and Power BI to take the analysis from business problem definition and data preparation through analytical exploration, visualization, and actionable business recommendations.
+The project follows the **APPASA framework: Ask, Prepare, Process, Analyze, Share, and Act** and combines SQL, MySQL, DuckDB, Python/Jupyter, and Power BI to take the analysis from business problem definition and data preparation through analytical exploration, visualization, and actionable business recommendations.
 
 The repository documents the complete analytical workflow, including **data ingestion and validation, SQL-based ELT processing, data cleaning and feature engineering, behavioral and business analysis, interactive Power BI reporting, and evidence-based membership growth recommendations**. The final processed analytical dataset contains **5,851,692 trip records** from the twelve monthly 2024 datasets.
 
@@ -22,7 +22,7 @@ Note: The Power BI (.pbix) file is provided through the project drive folder due
 
 This project analyzes **Cyclistic's 2024 bike-share trip data** to understand how **annual members and casual riders differ in their riding behavior** and identify data-driven opportunities to increase annual memberships.
 
-The project follows the **APPASA framework — Ask, Prepare, Process, Analyze, Share, and Act** — providing a structured end-to-end analytical workflow from business problem definition to actionable recommendations.
+The project follows the **APPASA framework: Ask, Prepare, Process, Analyze, Share, and Act**, providing a structured end-to-end analytical workflow from business problem definition to actionable recommendations.
 
 The analysis involves:
 
@@ -36,7 +36,7 @@ The analysis involves:
 
 | **Category** | **Tools / Technologies** |
 |---|---|
-| **Data Source** | Divvy Trip Data — publicly accessible Amazon S3 data repository |
+| **Data Source** | Divvy Trip Data - publicly accessible Amazon S3 data repository |
 | **Database & SQL** | MySQL, DuckDB |
 | **Programming & Analysis** | SQL, Python, Jupyter Notebook, Pandas, Seaborn, Matplotlib |
 | **Data Processing** | SQL, ELT workflow, data validation, data cleaning, data transformation, feature engineering |
@@ -45,7 +45,7 @@ The analysis involves:
 
 ## Analytical Workflow
 
-The project follows a structured **APPASA — Ask, Prepare, Process, Analyze, Share, and Act** workflow:
+The project follows a structured **APPASA: Ask, Prepare, Process, Analyze, Share, and Act** workflow:
 
 **Ask → Prepare → Process → Analyze → Share → Act**
 
