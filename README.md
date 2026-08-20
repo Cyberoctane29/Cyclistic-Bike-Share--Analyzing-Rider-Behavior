@@ -44,6 +44,9 @@ The analysis involves:
 | **Documentation & Collaboration** | GitHub, Kaggle, Google Drive |
 
 ## Analytical Workflow
+<br><br> 
+<div style="width:100%;text-align: center;"> <img align=middle src="https://i.ibb.co/997pH87W/9.png" alt="AllStages"> </div>
+<br><br> 
 
 The project follows a structured **APPASA: Ask, Prepare, Process, Analyze, Share, and Act** workflow:
 
